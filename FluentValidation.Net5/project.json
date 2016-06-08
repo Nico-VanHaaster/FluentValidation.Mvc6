@@ -1,0 +1,43 @@
+{
+    "version": "1.0.0-rc2-20160608-01",
+    "description": "FluentValidation.Net5 Class Library",
+    "authors": [ "Nico" ],
+    "frameworks": {
+        "net46": {
+            "dependencies": {
+                
+            },
+            "buildOptions": {
+                "define": [ "net46" ]
+            }
+        },
+        "netcoreapp1.0": {
+            "imports": [
+                "dotnet5.6",
+                "dnxcore50",
+                "portable-net45+win8"
+            ],
+            "dependencies": {
+                "System.Linq": "4.1.0-rc2-24027",
+                "System.Linq.Expressions": "4.0.11-rc2-24027",
+                "System.Text.RegularExpressions": "4.0.12-rc2-24027",
+                "System.Globalization": "4.0.11-rc2-24027",
+                "System.Threading.Thread": "4.0.0-rc2-24027",
+                "System.Diagnostics.Tools": "4.0.1-rc2-24027",
+                "System.Diagnostics.Contracts": "4.0.1-rc2-24027",
+                "System.Reflection": "4.1.0-rc2-24027",
+                "System.Runtime.Extensions": "4.1.0-rc2-24027",
+                "System.Reflection.Extensions": "4.0.1-rc2-24027",
+                "System.Diagnostics.Debug": "4.0.11-rc2-24027",
+                "System.Threading.Tasks": "4.0.11-rc2-24027",
+                "System.Threading": "4.0.11-rc2-24027"
+            },
+            "buildOptions": {
+                "define": ["netcore"]
+            }
+        }
+    },
+    "dependencies": {
+        
+    }
+}

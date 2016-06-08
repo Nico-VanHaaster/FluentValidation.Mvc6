@@ -1,0 +1,131 @@
+﻿@model FluentValidation.Web.Models.BasicValidationModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Basic Model Validation</h2>
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.ValidationSummary()
+}
+@using (Html.BeginForm())
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">String Validations</h4>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FullName, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", placeholder = "full name" })
+                        @Html.ValidationMessageFor(m => m.FullName)
+                        <div class="text-muted">
+                            <small>This field should have a required validation flag set.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.EmailAddress, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", placeholder = "email address" })
+                        @Html.ValidationMessageFor(m => m.EmailAddress)
+                        <div class="text-muted">
+                            <small>This field should have the email validation and required validation set.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CreditCard, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.CreditCard, new { @class = "form-control", placeholder = "credit card" })
+                        @Html.ValidationMessageFor(m => m.CreditCard)
+                        <div class="text-muted">
+                            <small>This field should have the credit card validation set.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "password" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                        <div class="text-muted">
+                            <small>This field has the string length between 5 - 25 characters (note clear text for testing).</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "confirm" })
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                        <div class="text-muted">
+                            <small>This filed has an equal validator to match the password (note clear text for testing).</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RegularExpression, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.RegularExpression, new { @class = "form-control", placeholder = "expression" })
+                        @Html.ValidationMessageFor(m => m.RegularExpression)
+                        <div class="text-muted">
+                            <small>This field has a regular expression of ^[a-z0-9-]+$ (web slug regex).</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">Number Validations</h4>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.MinValue, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.MinValue, new { @class = "form-control", placeholder = "min value at least 5", type = "number" })
+                        @Html.ValidationMessageFor(m => m.MinValue)
+                        <div class="text-muted">
+                            <small>This field should have the minimum validation of 5.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.MaxValue, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.MaxValue, new { @class = "form-control", placeholder = "max value less than 10", type = "number" })
+                        @Html.ValidationMessageFor(m => m.MaxValue)
+                        <div class="text-muted">
+                            <small>This field should have the maximum validation of 10.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Range, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Range, new { @class = "form-control", placeholder = "between 5 - 10", type = "number" })
+                        @Html.ValidationMessageFor(m => m.Range)
+                        <div class="text-muted">
+                            <small>This field should have validation for inclusive between 5 to 10.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+}

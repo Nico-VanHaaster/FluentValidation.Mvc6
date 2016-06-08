@@ -1,0 +1,31 @@
+{
+    "version": "1.0.0-rc1-20151216-01",
+    "description": "FluentValidation.Mvc6 Class Library",
+    "authors": [ "Nico" ],
+    "dependencies": {
+        "FluentValidation.Net5": "1.0.0-rc2-*",
+        "Microsoft.AspNetCore.Mvc.Abstractions": "1.0.0-rc2-final",
+        "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.0-rc2-final",
+        "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0-rc2-final"
+    },
+
+    "frameworks": {
+        "net46": {
+            "dependencies": {
+            },
+            "buildOptions": {
+                "define": [ "net46" ]
+            }
+        },
+        "netcoreapp1.0": {
+            "imports": [
+                "dotnet5.6",
+                "dnxcore50",
+                "portable-net45+win8"
+            ],
+            "buildOptions": {
+                "define": [ "netcore" ]
+            }
+        }
+    }
+}
