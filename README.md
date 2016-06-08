@@ -18,6 +18,12 @@ public void ConfigureServices(IServiceCollection services)
 ```
 The method `AddFluentValidation` allows for specifying a `FluentValidationModelValidatorProvider` and\or a custom `IValidatorFactory`
 
+## Nuget Installation
+This package is available on Nuget and will remain until the official repository has full support for Mvc6 Rc2.
+
+`Install-Package FluentValidation.Mvc6 -Pre`
+
+
 
 jQuery Validators:
 - Required
